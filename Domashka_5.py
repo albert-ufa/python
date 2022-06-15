@@ -78,30 +78,22 @@
 
 # 6 задание
 
+# with open('text_5.txt', 'r', encoding='UTF-8') as f:
+#     text = f.readlines()
+#     for line in text:
+#         new = ''
+#         for el in line:
+#             new = ''.join ([new,(el if el in ' 0123456789' else '' )])
+#         res = [int(i) for i in new.split()]
+#         print(f'{line.split()[0]} - {sum(res)} часов')
+
 # 7 задание
 
 # import json
 #
-# report = []
-# with open('text_6.txt', 'r', encoding='UTF-8') as file:
-#     text = file.read()
-#     file.seek(0)
-#     profits = {}
-#     profit_sum = 0
-#     for row in file:
-#         items = row.split(' ')
-#         profit = int(items[2]) - int(items[3])
-#         if profit > 0:
-#             profits.update({items[0]: profit})
-#             profit_sum += profit
-#     report.append(profits)
-#     report.append({'average_profit': (profit_sum / len(profits))})
-#
-# with open('text_1.json', 'w', encoding='UTF-8') as json_file:
-#     json.dump(report, json_file, ensure_ascii=False)
-#
-# json_report = json.dumps(report, ensure_ascii=False)
-#
-# print(f"Исходный файл:\n{text}\n")
-# print(f"Список:\n{report}\n")
-# print(f"json-объект:\n{json_report}")
+# open('text_6j.json', 'w', encoding='utf-8') as f_write:
+# ith open('text_6.txt', 'r', encoding='utf-8') as f_read:
+#     profit = {line.split()[0]: int(line.split()[2])-int(line.split()[3]) for line in f_read}
+#     res = [profit, {'average_profit': sum([(i) for i in profit.values() if int(i) > 0]) /
+#         len([int(i) for i in profit.values() if int(i) > 0])}]
+# som.dump(res, f_write)
